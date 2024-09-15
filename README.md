@@ -9,6 +9,6 @@ basic discord logs for [ox_inventory](https://github.com/overextended/ox_invento
 - [esx](https://github.com/esx-framework/esx_core)
 - [qbox](https://github.com/Qbox-project/qbx_core)
 - [nd_core](https://github.com/ND-Framework/ND_Core)
-- This will work with [qb-core](https://github.com/qbcore-framework/qb-core) but with versions [v2.24.1](https://github.com/overextended/ox_inventory/releases/tag/v2.42.1) Or later
+- This will work with [qb-core](https://github.com/qbcore-framework/qb-core) but with versions [v2.24.1](https://github.com/overextended/ox_inventory/releases/tag/v2.42.1) Or later.
 
 
