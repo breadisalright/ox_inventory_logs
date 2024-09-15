@@ -1,6 +1,3 @@
-# ox_inventory_logs
-basic discord logs for [ox_inventory](https://github.com/overextended/ox_inventory)
-
 # Ox-Logging
 - Discord Logs for [ox_inventory](https://github.com/overextended/ox_inventory) With the [registerhook Export](https://overextended.github.io/docs/ox_inventory/Functions/Server/Hooks#registerhook)
 
