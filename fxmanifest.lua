@@ -4,7 +4,7 @@ author 'Bread'
 description 'Webhook for ox_inventory'
 
 server_scripts {
-    'configs/sv_logs.lua',
-    'server/sv_oxhook.lua',
-    'server/sv_hooks.lua'
+    'configs/logs.lua',
+    'server/oxhook.lua',
+    'server/hooks.lua'
 }

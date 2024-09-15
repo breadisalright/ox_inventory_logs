@@ -1,20 +1,20 @@
 webhooks = {
-    ['drop'] = '', -- Enter Webhook URL's Here
+    ['floor'] = '', -- Enter Webhook URL's Here
     ['pickup'] = '',
     ['give'] = '',
     ['stash'] = '',
 }
 hooks = {
-    ['drop'] = {
+    ['floor'] = {
         from = 'player',
-        to = 'drop',
+        to = 'floor',
         callback = function(payload)
             local playerName = GetPlayerName(payload.source)
             local playerIdentifier = GetPlayerIdentifiers(payload.source)[1]
             local playerCoords = GetEntityCoords(GetPlayerPed(payload.source))
-            sendWebhook('drop', {
+            sendWebhook('floor', {
                 {
-                    title = 'Drop',
+                    title = 'floor',
                     description = ('Player: **%s** **|** (%s, %s) **|** Dropped Item: **%s** x%s **|** (Metadata: %s) **|** At Vector: **%s**')
                         :format(
                             playerName,
@@ -31,7 +31,7 @@ hooks = {
         end
     },
     ['pickup'] = {
-        from = 'drop',
+        from = 'floor',
         to = 'player',
         callback = function(payload)
             local playerName = GetPlayerName(payload.source)
