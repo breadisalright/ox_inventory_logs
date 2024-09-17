@@ -10,7 +10,7 @@ hooks = {
         to = 'floor',
         callback = function(payload)
             local playerName = GetPlayerName(payload.source)
-            local playerIdentifier = GetPlayerIdentifiers(payload.source)[1]
+            local playerIdentifiers = GetPlayerIdentifiers(payload.source)[1]
             local playerCoords = GetEntityCoords(GetPlayerPed(payload.source))
             sendWebhook('floor', {
                 {
@@ -18,7 +18,7 @@ hooks = {
                     description = ('Player: **%s** **|** (%s, %s) **|** Dropped Item: **%s** x%s **|** (Metadata: %s) **|** At Vector: **%s**')
                         :format(
                             playerName,
-                            playerIdentifier,
+                            playerIdentifiers,
                             payload.source,
                             payload.fromSlot.name,
                             payload.fromSlot.count,
@@ -35,7 +35,7 @@ hooks = {
         to = 'player',
         callback = function(payload)
             local playerName = GetPlayerName(payload.source)
-            local playerIdentifier = GetPlayerIdentifiers(payload.source)[1]
+            local playerIdentifiers = GetPlayerIdentifiers(payload.source)[1]
             local playerCoords = GetEntityCoords(GetPlayerPed(payload.source))
             sendWebhook('pickup', {
                 {
@@ -43,7 +43,7 @@ hooks = {
                     description = ('Player: **%s** **|** (%s, %s) **|** Took Item: **%s** x%s **|** (Metadata: %s) **|** At Vector: **%s**')
                         :format(
                             playerName,
-                            playerIdentifier,
+                            playerIdentifiers,
                             payload.source,
                             payload.fromSlot.name,
                             payload.fromSlot.count,
@@ -61,7 +61,7 @@ hooks = {
         callback = function(payload)
             if payload.fromInventory == payload.toInventory then return end
             local playerName = GetPlayerName(payload.source)
-            local playerIdentifier = GetPlayerIdentifiers(payload.source)[1]
+            local playerIdentifiers = GetPlayerIdentifiers(payload.source)[1]
             local playerCoords = GetEntityCoords(GetPlayerPed(payload.source))
             local targetSource = payload.toInventory
             local targetName = GetPlayerName(targetSource)
@@ -73,7 +73,7 @@ hooks = {
                     description = ('Player: **%s** **|** (%s, %s) **|** Gave: **%s** **|** (%s, %s) **|** Item: **%s** x%s **|** (Metadata: %s) **|** At Vector: **%s a %s**')
                         :format(
                             playerName,
-                            playerIdentifier,
+                            playerIdentifiers,
                             payload.source,
                             targetName,
                             targetIdentifier,
@@ -94,7 +94,7 @@ hooks = {
         to = 'stash',
         callback = function(payload)
             local playerName = GetPlayerName(payload.source)
-            local playerIdentifier = GetPlayerIdentifiers(payload.source)[1]
+            local playerIdentifiers = GetPlayerIdentifiers(payload.source)[1]
             local playerCoords = GetEntityCoords(GetPlayerPed(payload.source))
             sendWebhook('stash', {
                 {
@@ -102,8 +102,8 @@ hooks = {
                     description = ('Player: **%s** **|** (%s, %s) **|** Took Item: **%s** x%s **|** (Metadata: %s) **|** From Stash: **%s** **|** At Vector: **%s**')
                         :format(
                             playerName,
-                            playerIdentifier,
-                            payload.source,
+                            playerIdentifiers,
+                            payload.source, 
                             payload.fromSlot.name,
                             payload.fromSlot.count,
                             json.encode(payload.fromSlot.metadata),
@@ -120,7 +120,7 @@ hooks = {
         to = 'player',
         callback = function(payload)
             local playerName = GetPlayerName(payload.source)
-            local playerIdentifier = GetPlayerIdentifiers(payload.source)[1]
+            local playerIdentifiers = GetPlayerIdentifiers(payload.source)[1]
             local playerCoords = GetEntityCoords(GetPlayerPed(payload.source))
             sendWebhook('stash', {
                 {
@@ -128,7 +128,7 @@ hooks = {
                     description = ('Player: **%s** **|** (%s, %s) **|** Took Item: **%s** x%s **|** (Metadata: %s) **|** From Stash: **%s** **|** At Vector: **%s**')
                         :format(
                             playerName,
-                            playerIdentifier,
+                            playerIdentifiers,
                             payload.source,
                             payload.fromSlot.name,
                             payload.fromSlot.count,
