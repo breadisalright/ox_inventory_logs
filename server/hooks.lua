@@ -4,7 +4,7 @@ end
 
 function sendWebhook(webhook, data)
     if webhooks[webhook] == nil then
-        print('^1[logs] ^0Webhook ' .. webhook .. ' does not exist.')
+        print('^1[logs] ^0Webhook ' .. webhook .. ' Doesn't exist.')
         return
     end
 
