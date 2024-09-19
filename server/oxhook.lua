@@ -11,7 +11,7 @@ end
 AddEventHandler('onResourceStart', function(resource)
     if resource ~= GetCurrentResourceName() then return end
     if GetResourceState('ox_inventory') ~= 'started' then
-        print('^1[logs] ^0ox_inventory is not started.')
+        print('^1[logs] ^0ox_inventory hasn't.')
         return
     end
     exports.ox_inventory:registerHook(
