@@ -7,13 +7,6 @@ function addTypeHook(name, from, to, callback)
         callback = callback
     }
 end
-
-AddEventHandler('onResourceStart', function(resource)
-    if resource ~= GetCurrentResourceName() then return end
-    if GetResourceState('ox_inventory') ~= 'started' then
-        print('^1[logs] ^0ox_inventory hasn't.')
-        return
-    end
     exports.ox_inventory:registerHook(
         'swapItems',
         function(payload)
