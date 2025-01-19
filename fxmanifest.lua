@@ -5,6 +5,6 @@ description 'Webhook for ox_inventory'
 
 server_scripts {
     'configs/logs.lua',
-    'server/oxhook.lua',
-    'server/hooks.lua'
+    'server/oxWebHook.lua',
+    'server/webHooks.lua'
 }
